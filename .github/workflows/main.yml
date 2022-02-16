@@ -24,10 +24,14 @@ jobs:
         with:
           dotnet-version: 5.0.100-rc.1.20452.10
 
-      - name: Build using github action
-        shell: bash
-        run: |
-          ${{ steps.hello.outputs.profile }}
+      #- name: Build using github action
+       # shell: bash
+        #run: |
+         # ${{ steps.hello.outputs.profile }}
+          
+          
+          
+          
       # Use the output from the `hello` step
       #- name: Get the output time
        # run: echo "The time was ${{ steps.hello.outputs.time }}"
