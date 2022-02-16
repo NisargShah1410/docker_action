@@ -8,9 +8,7 @@ jobs:
       # To use this repository's private action , you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      #- name: access
-       # run: chmod +x entrypoint.sh
-      
+            
       - name: Hello world action step
         uses: NisargShah1410/docker_action@v1 # Uses an action in the root directory
         id: hello
@@ -24,10 +22,10 @@ jobs:
         with:
           dotnet-version: 5.0.100-rc.1.20452.10
 
-      #- name: Build using github action
-       # shell: bash
-        #run: |
-         # ${{ steps.hello.outputs.profile }}
+      - name: Build using github action
+        shell: bash
+        run: |
+          ${{ steps.hello.outputs.profile }}
           
           
           
