@@ -1,0 +1,28 @@
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+  language:
+    description: 'Language chosen'
+    required: true
+    default : 'dotnet'
+  path-to-proj: 
+    description: 'Project file path for dotnet app'
+    required: false
+    
+outputs:
+  #time: # id of output
+   # description: 'The time we greeted you'
+  profile: 
+    description: 'Command to run'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.language }}
+    - ${{ inputs.path-to-proj }}
