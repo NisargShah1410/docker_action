@@ -1,0 +1,40 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # To use this repository's private action , you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      #- name: access
+       # run: chmod +x entrypoint.sh
+      
+      - name: Hello world action step
+        uses: NisargShah1410/docker_action@v1 # Uses an action in the root directory
+        id: hello
+        with:
+          who-to-greet: 'Mona the Octocat'
+          language: 'python'
+          path-to-proj: '.'
+          
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.100-rc.1.20452.10
+
+      #- name: Build using github action
+       # shell: bash
+        #run: |
+         # ${{ steps.hello.outputs.profile }}
+          
+          
+          
+          
+      # Use the output from the `hello` step
+      #- name: Get the output time
+       # run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+
+
