@@ -10,7 +10,8 @@ then
   echo "::set-output name=profile::$profile"
 elif [ "$2" == 'python' ]
 then
-  profile="python -m pip install --upgrade pip && pip install -r requirements.txt"
+  #profile="python -m pip install --upgrade pip && pip install -r requirements.txt"
+  profile="python -m pip install --upgrade pip"
   echo "::set-output name=profile::$profile"
 else
   echo "Please select from dotnet , angular or python"
