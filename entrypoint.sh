@@ -14,7 +14,8 @@ then
   profile="python -m pip install --upgrade pip"
   echo "::set-output name=profile::$profile"
 else
-  echo "Please select from dotnet , angular or python"
+  profile="echo \"Please select from dotnet , angular or python \""
+  echo "::set-output name=profile::$profile"
 fi
 
 #echo "Hello $2"
