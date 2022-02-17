@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
             
       - name: Hello world action step
-        uses: NisargShah1410/docker_action@v1.1 # Uses an action in the root directory
+        uses: NisargShah1410/docker_action@v1.2 # Uses an action in the root directory
         id: hello
         with:
           who-to-greet: 'Mona the Octocat'
